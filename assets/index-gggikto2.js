@@ -42,7 +42,7 @@ The illustration must contain EXACTLY the single ingredient mentioned and NOTHIN
 DO NOT show any hands, arms, or human body parts.
 Place the single item on a clean white background, centered, viewed from a slight angle or from above.
 If the description says "honey" — draw ONLY a jar of honey. If it says "2 eggs" — draw ONLY 2 eggs. No plates, no bowls, no decorations, no other ingredients.
-If the ingredient comes in a package, bag or jar, draw it plain and unlabeled in flat muted colors, with no pictures or words printed on it.`,tools:`Show ONLY the ONE specific kitchen tool or utensil described — nothing else. Do NOT add extra items, ingredients, surfaces, or any other objects.
+If the ingredient comes in a package, bag or jar, draw it in flat muted colors with no words, logos or badges on it. Without a product photo, keep the package plain.`,tools:`Show ONLY the ONE specific kitchen tool or utensil described — nothing else. Do NOT add extra items, ingredients, surfaces, or any other objects.
 The illustration must contain EXACTLY the single tool mentioned and NOTHING MORE.
 DO NOT show any hands, arms, or human body parts.
 Place the single tool on a clean white background, centered.
@@ -56,12 +56,12 @@ Include subtle garnish and decoration appropriate for the dish.
 DO NOT show any hands. Focus entirely on the finished dish presentation.
 Make it look appetizing and professionally plated.`}),AE=Object.freeze('Describe this cooking/recipe illustration in detail. List the main objects, ingredients, actions, and kitchen tools shown. Reply in a simple comma-separated list of keywords in English. Example: "bowl, mixing, eggs, flour, spoon, green bowl, hands, stirring". Keep it to 10-20 keywords.');function nU(e){return`
 
-PRODUCT REFERENCE IMAGES: The last ${e} image(s) above are PRODUCT REFERENCE PHOTOS. These show the EXACT real-world product(s) that must appear in the illustration. You MUST:
-- Draw the product so it is clearly recognizable as the SPECIFIC product shown in the reference photo
-- Match the product's packaging shape, colors, and overall visual appearance as closely as possible
-- Adapt it to the illustration style (hand-drawn, matching the other reference images) but keep it clearly identifiable as THAT specific product
-- The product's distinctive features (color scheme, package shape, cap/lid style) must be preserved
-- CRITICAL: REMOVE ALL TEXT from the product — no brand name, no labels, no letters, no numbers. Draw the product's visual appearance (shape, colors, packaging) but with a completely blank/clean label area. The illustration must contain ZERO text.`}function iU(e,t){return`
+PRODUCT REFERENCE IMAGES: The ${e} product reference photo(s) above show the real-world product(s) that must appear in the illustration. You MUST:
+- Draw the product so it is recognizable as that kind of product: keep the packaging shape, cap/lid style and main color scheme
+- Soften the product's colors into the muted palette of the style references — no glossy, saturated or photographic look
+- CRITICAL: REMOVE ALL TEXT from the product — no brand name, no labels, no letters, no numbers. The illustration must contain ZERO text.
+- REMOVE every logo, emblem, symbol, badge, stamp, seal and icon from the package — including small round marks and decorative brand symbols such as flower, star, sun or swirl shapes. Do not invent replacement decorations either; leave that area plain
+- If the package shows a picture of food, do NOT copy it. Draw your OWN simple, different picture of that kind of food in the reference style (for example a different cake shape, angle and decoration). Never reproduce the package's photo or artwork.`}function iU(e,t){return`
 
 RECIPE CONTEXT IMAGES: The ${e} image(s) above show tools and ingredients already drawn for this recipe. You MUST reuse the EXACT SAME visual appearance for any of these items in this step. Match shapes, colors, and proportions exactly. Items shown: ${t.join(", ")}`}const oU=`
 
@@ -94,7 +94,7 @@ MANDATORY REQUIREMENTS:
 4. Follow the SECTION TYPE instructions above precisely — especially for INGREDIENTS and TOOLS: show ONLY the single requested item, nothing extra.
 5. Use ONLY the color palette visible in the reference images.
 6. ZERO TEXT in the image — no letters, no numbers, no brand names, no labels, no words of any kind. If a product has text on it, draw the product without any text.${o>0?`
-7. The specific product(s) from the PRODUCT REFERENCE PHOTOS must appear in the illustration, drawn in the same style but clearly recognizable — but with ALL TEXT REMOVED from the product.`:""}
+7. The product(s) from the PRODUCT REFERENCE PHOTOS must appear in the illustration, drawn in the same style and recognizable by shape and main color — with ALL TEXT, LOGOS and BADGES REMOVED, and any food picture on the package redrawn as your own different picture.`:""}
 
 Generate the illustration now.${R}`}let yr=null;async function RE(e){dE("indexImage");const t=e.match(/^data:([^;]+);base64,(.+)$/);if(!t)throw new Error("Invalid data URL");const[,i,o]=t,s=await va(()=>ya([{inlineData:{mimeType:i,data:o}},{text:AE}]));return ma("indexImage"),s.toLowerCase().split(",").map(a=>a.trim()).filter(Boolean)}function jc(){yr&&(yr.abort(),yr=null)}async function sU(e,t){const i=Dn()||{};let o=0;const s=new Set(Object.keys(i)),a=e.filter(m=>{const y=decodeURI(m.split("/").pop());return!s.has(y)});if(a.length===0)return t&&t(e.length,e.length,"הושלם",null),i;const f=ha("indexImage",a.length);if(!f.allowed){const m=rE("indexImage",a.length);if(!window.confirm(`אזהרת עלויות - אינדוקס ${a.length} תמונות!
 
